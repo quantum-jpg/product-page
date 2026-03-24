@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Solutions | Helsak Enterprises Limited</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <style>
+:root { --hik-red: #d71920; --hik-dark: #111827; }
+
+/* smoothness */
+html { scroll-behavior: smooth; }
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+* { transition: all 0.25s ease-in-out; }
+
+/* gradient */
+.hik-gradient {
+    background: linear-gradient(120deg, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+}
+
+/* navbar */
+.nav-link-hik:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ea580c;
+    transition: width .3s;
+}
+.nav-link-hik:hover:after { width: 100%; }
+
+/* 🔥 product cards upgraded */
+.product-card {
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* image zoom */
+.product-img {
+    overflow: hidden;
+}
+.product-img img {
+    transition: transform 0.5s ease;
+}
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* wishlist button */
+.wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: white;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.wishlist.active {
+    color: red;
+}
+
+/* filter buttons */
+.filter-btn {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    cursor: pointer;
+}
+.filter-btn.active,
+.filter-btn:hover {
+    background: #ea580c;
+    color: white;
+    border-color: #ea580c;
+}
+</style>
+</head>
+<body class="bg-white text-slate-900 font-sans">
+
+<div class="bg-gray-100 py-1 text-[11px] text-gray-600 border-b">
+    <div class="container mx-auto px-6 flex justify-end space-x-6 uppercase tracking-widest">
+        <span>Tanzania / English</span>
+        <a href="#contact" class="hover:text-orange-600">Support</a>
+        <a href="#" class="hover:text-orange-600">Partner Login</a>
+    </div>
+</div>
+
+<nav class="bg-white sticky top-0 z-50 border-b">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-black text-slate-900">HEL<span class="text-orange-600">SAK</span></a>
+        
+        <ul class="hidden lg:flex items-center space-x-10 text-[13px] font-bold uppercase tracking-tighter">
+            <li><a href="#" class="nav-link-hik text-orange-600">Products</a></li>
+            <li><a href="#" class="nav-link-hik">Solutions</a></li>
+            <li><a href="#" class="nav-link-hik">Support & Service</a></li>
+            <li><a href="#" class="nav-link-hik">About Us</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-4">
+            <i class="fa-solid fa-magnifying-glass text-gray-500 cursor-pointer"></i>
+            <a href="index.html#contact" class="bg-orange-600 text-white text-xs px-5 py-2 font-bold uppercase hover:bg-slate-900 transition">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<section class="relative h-[500px] bg-slate-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 hik-gradient"></div>
+    
+    <div class="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center text-white">
+        <h4 class="text-orange-500 font-bold tracking-[0.3em] uppercase mb-4 text-sm" data-aos="fade-right">Innovation for a Safer World</h4>
+        <h1 class="text-5xl md:text-7xl font-light mb-6 leading-none" data-aos="fade-right" data-aos-delay="100">Intelligent <br><span class="font-bold">Security Systems</span></h1>
+        <p class="text-gray-300 max-w-xl text-lg mb-8" data-aos="fade-right" data-aos-delay="200">
+            Helsak Enterprises provides end-to-end ICT solutions powered by AI and the latest IoT technologies.
+        </p>
+        <div class="flex space-x-4" data-aos="fade-up" data-aos-delay="300">
+            <button class="border-2 border-white px-8 py-3 font-bold hover:bg-white hover:text-black transition">Browse Products</button>
+            <button class="bg-orange-600 px-8 py-3 font-bold hover:bg-orange-700 transition">View Solutions</button>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold">Solutions by Industry</h2>
+                <div class="w-12 h-1 bg-orange-600 mt-2"></div>
+            </div>
+            <a href="#" class="text-orange-600 font-bold text-sm uppercase flex items-center">All Solutions <i class="fa-solid fa-chevron-right ml-2"></i></a>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="relative group cursor-pointer overflow-hidden h-64" data-aos="zoom-in">
+                <div class="absolute inset-0 bg-slate-900 opacity-40 group-hover:opacity-20 transition"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541829070764-84a7d30dee6b?auto=format&fit=crop&q=80')] bg-cover"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h5 class="font-bold text-xl mb-1">Banking</h5>
+                    <p class="text-xs opacity-0 group-hover:opacity-100 transition duration-500">Secure transaction environments.</p>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden h-64" data-aos="zoom-in" data-aos-delay="100">
+                <div class="absolute inset-0 bg-slate-900 opacity-40"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')] bg-cover"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h5 class="font-bold text-xl mb-1">Enterprise</h5>
+                    <p class="text-xs opacity-0 group-hover:opacity-100 transition">Smart building management.</p>
+                </div>
+            </div>
+             <div class="relative group cursor-pointer overflow-hidden h-64" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute inset-0 bg-slate-900 opacity-40"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80')] bg-cover"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h5 class="font-bold text-xl mb-1">Residential</h5>
+                    <p class="text-xs opacity-0 group-hover:opacity-100 transition">Integrated home safety.</p>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden h-64" data-aos="zoom-in" data-aos-delay="300">
+                <div class="absolute inset-0 bg-slate-900 opacity-40"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558444479-c8a5105272ee?auto=format&fit=crop&q=80')] bg-cover"></div>
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <h5 class="font-bold text-xl mb-1">Retail</h5>
+                    <p class="text-xs opacity-0 group-hover:opacity-100 transition">Loss prevention & traffic analytics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-10 border-b">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+
+        <!-- Search -->
+        <div class="relative w-full md:w-1/3">
+            <input type="text" placeholder="Search products..."
+                class="w-full border px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <i class="fa fa-search absolute right-4 top-4 text-gray-400"></i>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex gap-3 flex-wrap">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">CCTV</button>
+            <button class="filter-btn">Access Control</button>
+            <button class="filter-btn">Networking</button>
+        </div>
+
+    </div>
+</section>
+<section class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-center text-3xl font-bold mb-16 uppercase tracking-widest">Featured Hardware</h2>
+        
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="product-card border p-8 transition-all duration-300 group">
+                <div class="text-center mb-6">
+                    <i class="fa-solid fa-camera text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">DeepinView Series</h3>
+                <p class="text-sm text-gray-500 mb-6">Built-in deep learning algorithms for advanced face recognition and crowd density analysis.</p>
+                <div class="flex justify-between items-center pt-6 border-t">
+                    <span class="text-xs font-bold text-gray-400">ID: HS-7600-AI</span>
+                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
+                </div>
+            </div>
+
+            <div class="product-card border p-8 transition-all duration-300 group">
+                <div class="text-center mb-6">
+                    <i class="fa-solid fa-network-wired text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Pro-Series NVR</h3>
+                <p class="text-sm text-gray-500 mb-6">Up to 32-ch IP camera inputs with H.265+ compression and RAID protection.</p>
+                <div class="flex justify-between items-center pt-6 border-t">
+                    <span class="text-xs font-bold text-gray-400">ID: HS-NVR-32CH</span>
+                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
+                </div>
+            </div>
+
+            <div class="product-card border p-8 transition-all duration-300 group">
+                <div class="text-center mb-6">
+                    <i class="fa-solid fa-fingerprint text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">MinMoe Face Recognition</h3>
+                <p class="text-sm text-gray-500 mb-6">Touchless access control with temperature screening and mask detection.</p>
+                <div class="flex justify-between items-center pt-6 border-t">
+                    <span class="text-xs font-bold text-gray-400">ID: HS-K1T671</span>
+                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-white py-16">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-sm">
+        <div>
+            <h5 class="text-orange-600 font-bold mb-6 uppercase">About Helsak</h5>
+            <p class="text-gray-400 leading-relaxed">Helsak Enterprises is a leader in integrated security and ICT solutions in Tanzania, serving both private and government sectors since 2013.</p>
+        </div>
+        <div>
+            <h5 class="text-orange-600 font-bold mb-6 uppercase">Quick Links</h5>
+            <ul class="space-y-3 text-gray-400">
+                <li><a href="#" class="hover:text-white">Product Catalog</a></li>
+                <li><a href="#" class="hover:text-white">Solution Design</a></li>
+                <li><a href="#" class="hover:text-white">Technical Support</a></li>
+                <li><a href="#" class="hover:text-white">Where to Buy</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="text-orange-600 font-bold mb-6 uppercase">Technical Support</h5>
+            <ul class="space-y-3 text-gray-400">
+                <li><a href="#" class="hover:text-white">Download Center</a></li>
+                <li><a href="#" class="hover:text-white">Knowledge Base</a></li>
+                <li><a href="#" class="hover:text-white">Training Center</a></li>
+                <li><a href="#" class="hover:text-white">Online Tools</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="text-orange-600 font-bold mb-6 uppercase">Contact</h5>
+            <p class="text-gray-400 mb-2">Dar es Salaam, Tanzania</p>
+            <p class="text-gray-400 mb-2">Phone: +255 762 474644</p>
+            <p class="text-gray-400">Email: martildal2015@gmail.com</p>
+        </div>
+    </div>
+    <div class="container mx-auto px-6 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between text-gray-500 text-xs">
+        <p>&copy; 2026 Helsak Enterprises Limited. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 uppercase">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Use</a>
+            <a href="#" class="hover:text-white">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>
