@@ -111,18 +111,28 @@ body {
   position: relative;
   border-radius: 8px;
   z-index: 1;
+  overflow: hidden;
 }
 
-/* glowing border layer */
+/* animated border layer */
 .glow-card::before {
   content: "";
   position: absolute;
   inset: 0;
+  padding: 2px;
   border-radius: 8px;
-  padding: 2px; /* thickness of the wall */
-  background: linear-gradient(120deg, transparent, orange, transparent);
-  
-  /* mask to show ONLY border */
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--glow-color, orange),
+    transparent
+  );
+
+  background-size: 200% 200%;
+  animation: moveGlow 3s linear infinite;
+
+  /* show only border */
   -webkit-mask: 
     linear-gradient(#000 0 0) content-box, 
     linear-gradient(#000 0 0);
@@ -133,9 +143,37 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* show border on hover */
 .glow-card:hover::before {
   opacity: 1;
+}
+
+/* animation */
+@keyframes moveGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+/* CCTV = orange */
+.product-card[data-category="CCTV"] {
+  --glow-color: orange;
+}
+
+/* Access Control = blue */
+.product-card[data-category="Access Control"] {
+  --glow-color: #3b82f6;
+}
+
+/* Networking = green */
+.product-card[data-category="Networking"] {
+  --glow-color: #10b981;
+}
+
+/* Integration = purple */
+.product-card[data-category="intergaration"] {
+  --glow-color: #a855f7;
 }
 
 </style>
