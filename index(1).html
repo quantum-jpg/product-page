@@ -86,6 +86,23 @@ body {
     color: white;
     border-color: #ea580c;
 }
+/* Predictive Search Styles */
+#predictions li {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 13px;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+#predictions li:last-child { border-bottom: none; }
+
+#predictions li:hover {
+    background: #fff7ed;
+    color: #ea580c;
+    padding-left: 25px;
+}
 </style>
 </head>
 <body class="bg-white text-slate-900 font-sans">
@@ -93,8 +110,7 @@ body {
 <div class="bg-gray-100 py-1 text-[11px] text-gray-600 border-b">
     <div class="container mx-auto px-6 flex justify-end space-x-6 uppercase tracking-widest">
         <span>Tanzania / English</span>
-        <a href="#contact" class="hover:text-orange-600">Support</a>
-        <a href="#" class="hover:text-orange-600">Partner Login</a>
+        <a href="https://wonderful-cannoli-39c485.netlify.app/#services" class="hover:text-orange-600">service support</a>
     </div>
 </div>
 
@@ -106,12 +122,12 @@ body {
             <li><a href="#" class="nav-link-hik text-orange-600">Products</a></li>
             <li><a href="#" class="nav-link-hik">Solutions</a></li>
             <li><a href="#" class="nav-link-hik">Support & Service</a></li>
-            <li><a href="#" class="nav-link-hik">About Us</a></li>
+            <li><a href="#about" class="nav-link-hik">About Us</a></li>
         </ul>
 
         <div class="flex items-center space-x-4">
-            <i class="fa-solid fa-magnifying-glass text-gray-500 cursor-pointer"></i>
-            <a href="index.html#contact" class="bg-orange-600 text-white text-xs px-5 py-2 font-bold uppercase hover:bg-slate-900 transition">Contact Us</a>
+            
+            <a href="https://wonderful-cannoli-39c485.netlify.app/#contact" class="bg-orange-600 text-white text-xs px-5 py-2 font-bold uppercase hover:bg-slate-900 transition">Contact Us</a>
         </div>
     </div>
 </nav>
@@ -127,13 +143,18 @@ body {
             Helsak Enterprises provides end-to-end ICT solutions powered by AI and the latest IoT technologies.
         </p>
         <div class="flex space-x-4" data-aos="fade-up" data-aos-delay="300">
-            <button class="border-2 border-white px-8 py-3 font-bold hover:bg-white hover:text-black transition">Browse Products</button>
-            <button class="bg-orange-600 px-8 py-3 font-bold hover:bg-orange-700 transition">View Solutions</button>
-        </div>
+    <a href="#products-grid" class="border-2 border-white px-8 py-3 font-bold hover:bg-white hover:text-black transition inline-block text-center">
+        Browse Products
+    </a>
+    
+    <a href="#solutions" class="bg-orange-600 text-white px-8 py-3 font-bold hover:bg-orange-700 transition inline-block text-center">
+        View Solutions
+    </a>
+</div>
     </div>
 </section>
 
-<section class="py-20 bg-gray-50">
+<section id="solutions" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
         <div class="flex justify-between items-end mb-12">
             <div>
@@ -183,11 +204,14 @@ body {
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
 
         <!-- Search -->
-        <div class="relative w-full md:w-1/3">
-            <input type="text" placeholder="Search products..."
-                class="w-full border px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500">
-            <i class="fa fa-search absolute right-4 top-4 text-gray-400"></i>
-        </div>
+       <div class="relative w-full md:w-1/3" id="searchContainer">
+    <input type="text" id="productSearch" autocomplete="off" placeholder="Search products..."
+        class="w-full border px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500">
+    <i class="fa fa-search absolute right-4 top-4 text-gray-400"></i>
+    
+    <ul id="predictions" class="absolute z-[60] w-full bg-white border mt-2 rounded-xl shadow-xl hidden overflow-hidden">
+        </ul>
+</div>
 
         <!-- Filters -->
         <div class="flex gap-3 flex-wrap">
@@ -195,51 +219,53 @@ body {
             <button class="filter-btn">CCTV</button>
             <button class="filter-btn">Access Control</button>
             <button class="filter-btn">Networking</button>
+            <button class="filter-btn">intergaration</button>
         </div>
 
     </div>
 </section>
-<section class="py-20">
+
+<section id ="products-grid" class="py-20">
     <div class="container mx-auto px-6">
         <h2 class="text-center text-3xl font-bold mb-16 uppercase tracking-widest">Featured Hardware</h2>
         
         <div class="grid md:grid-cols-3 gap-12">
-            <div class="product-card border p-8 transition-all duration-300 group">
-                <div class="text-center mb-6">
-                    <i class="fa-solid fa-camera text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">DeepinView Series</h3>
-                <p class="text-sm text-gray-500 mb-6">Built-in deep learning algorithms for advanced face recognition and crowd density analysis.</p>
-                <div class="flex justify-between items-center pt-6 border-t">
-                    <span class="text-xs font-bold text-gray-400">ID: HS-7600-AI</span>
-                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
-                </div>
-            </div>
-
-            <div class="product-card border p-8 transition-all duration-300 group">
-                <div class="text-center mb-6">
-                    <i class="fa-solid fa-network-wired text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">Pro-Series NVR</h3>
-                <p class="text-sm text-gray-500 mb-6">Up to 32-ch IP camera inputs with H.265+ compression and RAID protection.</p>
-                <div class="flex justify-between items-center pt-6 border-t">
-                    <span class="text-xs font-bold text-gray-400">ID: HS-NVR-32CH</span>
-                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
-                </div>
-            </div>
-
-            <div class="product-card border p-8 transition-all duration-300 group">
-                <div class="text-center mb-6">
-                    <i class="fa-solid fa-fingerprint text-5xl text-gray-300 group-hover:text-orange-600 transition"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">MinMoe Face Recognition</h3>
-                <p class="text-sm text-gray-500 mb-6">Touchless access control with temperature screening and mask detection.</p>
-                <div class="flex justify-between items-center pt-6 border-t">
-                    <span class="text-xs font-bold text-gray-400">ID: HS-K1T671</span>
-                    <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">Learn More</a>
-                </div>
-            </div>
+    <div class="product-card border p-8 transition-all duration-300 group" data-category="CCTV">
+        <div class="text-center mb-6">
+            <i class="fa-solid fa-camera text-5xl text-gray-300 group-hover:text-orange-600 transition-transform group-hover:scale-110"></i>
         </div>
+        <h3 class="font-bold text-lg mb-2">DeepinView Series</h3>
+        <p class="text-sm text-gray-500 mb-6">Built-in deep learning algorithms for advanced face recognition and crowd density analysis.</p>
+        <div class="flex justify-between items-center pt-6 border-t">
+            <span class="text-xs font-bold text-gray-400">ID: HS-7600-AI</span>
+            <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">View Specs</a>
+        </div>
+    </div>
+
+    <div class="product-card border p-8 transition-all duration-300 group" data-category="Networking">
+        <div class="text-center mb-6">
+            <i class="fa-solid fa-network-wired text-5xl text-gray-300 group-hover:text-orange-600 transition-transform group-hover:scale-110"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Pro-Series NVR</h3>
+        <p class="text-sm text-gray-500 mb-6">Up to 32-ch IP camera inputs with H.265+ compression and RAID protection.</p>
+        <div class="flex justify-between items-center pt-6 border-t">
+            <span class="text-xs font-bold text-gray-400">ID: HS-NVR-32CH</span>
+            <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">View Specs</a>
+        </div>
+    </div>
+
+    <div class="product-card border p-8 transition-all duration-300 group" data-category="Access Control">
+        <div class="text-center mb-6">
+            <i class="fa-solid fa-fingerprint text-5xl text-gray-300 group-hover:text-orange-600 transition-transform group-hover:scale-110"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">MinMoe Face Recognition</h3>
+        <p class="text-sm text-gray-500 mb-6">Touchless access control with temperature screening and mask detection.</p>
+        <div class="flex justify-between items-center pt-6 border-t">
+            <span class="text-xs font-bold text-gray-400">ID: HS-K1T671</span>
+            <a href="#" class="text-orange-600 font-bold text-xs uppercase hover:underline">View Specs</a>
+        </div>
+     </div>
+     </div>
     </div>
 </section>
 
@@ -261,7 +287,7 @@ body {
         <div>
             <h5 class="text-orange-600 font-bold mb-6 uppercase">Technical Support</h5>
             <ul class="space-y-3 text-gray-400">
-                <li><a href="#" class="hover:text-white">Download Center</a></li>
+                
                 <li><a href="#" class="hover:text-white">Knowledge Base</a></li>
                 <li><a href="#" class="hover:text-white">Training Center</a></li>
                 <li><a href="#" class="hover:text-white">Online Tools</a></li>
@@ -288,6 +314,88 @@ body {
 <script>
     AOS.init({ duration: 1000, once: true });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+        const searchInput = document.getElementById('productSearch');
+        const predictionsList = document.getElementById('predictions');
 
+        // --- 1. SEARCH & PREDICTION LOGIC ---
+        searchInput.addEventListener('input', () => {
+            const val = searchInput.value.toLowerCase();
+            predictionsList.innerHTML = ''; 
+
+            if (val.length < 1) {
+                predictionsList.classList.add('hidden');
+                showAll();
+                return;
+            }
+
+            const matches = Array.from(products).filter(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                return title.includes(val);
+            });
+
+            if (matches.length > 0) {
+                predictionsList.classList.remove('hidden');
+                matches.forEach(match => {
+                    const title = match.querySelector('h3').textContent;
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fa-solid fa-magnifying-glass mr-2 opacity-30"></i> ${title}`;
+                    
+                    li.addEventListener('click', () => {
+                        searchInput.value = title;
+                        predictionsList.classList.add('hidden');
+                        filterBySearch(title.toLowerCase());
+                    });
+                    predictionsList.appendChild(li);
+                });
+            } else {
+                predictionsList.classList.add('hidden');
+            }
+            filterBySearch(val);
+        });
+
+        function filterBySearch(term) {
+            products.forEach(product => {
+                const text = product.innerText.toLowerCase();
+                product.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        }
+
+        function showAll() {
+            products.forEach(p => p.style.display = 'block');
+        }
+
+        // --- 2. CATEGORY FILTER LOGIC ---
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-orange-600', 'text-white');
+                    b.classList.add('bg-transparent', 'text-slate-900');
+                });
+                btn.classList.add('active', 'bg-orange-600', 'text-white');
+
+                const selected = btn.textContent.trim();
+                products.forEach(product => {
+                    const category = product.getAttribute('data-category');
+                    if (selected === 'All' || category === selected) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Close predictions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('searchContainer').contains(e.target)) {
+                predictionsList.classList.add('hidden');
+            }
+        });
+    });
+</script>
 </body>
 </html>
